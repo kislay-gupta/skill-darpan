@@ -7,6 +7,7 @@ import { Autoplay } from 'swiper/modules';
 import homeSildes from '../../constant/homeHeroData';
 import Image from 'next/image';
 import { AnimatePresence,motion } from 'framer-motion';
+import Button from '../ui/Button';
 function Hero() {
     const container = {
         hidden: { opacity: 1, scale: 0 },
@@ -37,7 +38,7 @@ function Hero() {
         loop={true}
         autoplay={{
             delay: 2500,
-            disableOnInteraction: false,
+            disableOnInteraction: true,
           }}
         modules={[Autoplay]}
         className="mySwiper"
@@ -49,13 +50,13 @@ function Hero() {
             <section className=" ">
                 <Image
     src={data.bg}
-    className="absolute inset-0 blur-sm hover:blur-0  object-cover w-full h-full"
+    className="absolute inset-0 md:blur-sm hover:blur-0 h-96  object-cover w-full md:h-full"
     width={500}
     height={500}
   />
+<div className='absolute inset-0 h-screen  bg-black/70'></div>
 
-<div className='absolute inset-0  bg-black/70'></div>
-  <div className="mx-auto text-white max-w-screen-xl relative z-10 px-4 py-32 lg:flex lg:h-screen lg:items-center">
+  <div className="mx-auto text-white max-w-screen-xl relative z-10 px-4 h-full py-16 md:py-32 lg:flex lg:h-screen lg:items-center">
     <motion.div className="mx-auto text-center"
 initial={{ opacity: 0 }}
 whileInView={{ opacity: 1 }}
@@ -64,7 +65,7 @@ transition={{ duration: 1,
     }}
 
     >
-      <motion.h1 className="text-3xl  font-extrabold sm:text-7xl"
+      <motion.h1 className="text-2xl  font-extrabold sm:text-7xl"
 
       >
       LEARN. SKILL. SUCCESS.
@@ -72,30 +73,13 @@ transition={{ duration: 1,
         <strong className="font-extrabold  text-xl sm:text-5xl text-blue-700 sm:block"> {data.subTitle} </strong>
       </motion.h1>
 
-      <p className="mt-4 sm:px-24 sm:text-xl/relaxed">
+      <p className="mt-4  sm:px-24 text-xs/relaxed sm:text-xl/relaxed">
       {data.description}
             </p>
-            <div className="grid place-content-center  p-4">
-            <button
+            <div className='my-4'>
 
-      className="group relative shadow-md rounded-md hover:rounded-none h-max w-max mx-auto  border-white border-2 hover:border-none  px-4 py-2 font-medium text-slate-100 transition-colors duration-[400ms] hover:bg-primary hover:text-black"
-    >
-      <span>Know more</span>
-
-      {/* TOP */}
-      <span className="absolute left-0 rounded-full top-0 h-[2px] w-0 bg-black transition-all duration-100 group-hover:w-full" />
-
-      {/* RIGHT */}
-      <span className="absolute right-0 rounded-md top-0 h-0 w-[2px] bg-black transition-all delay-100 duration-100 group-hover:h-full" />
-
-      {/* BOTTOM */}
-      <span className="absolute bottom-0 rounded-md right-0 h-[2px] w-0 bg-black transition-all delay-200 duration-100 group-hover:w-full" />
-
-      {/* LEFT */}
-      <span className="absolute bottom-0 rounded-md left-0 h-0 w-[2px] bg-black transition-all delay-300 duration-100 group-hover:h-full" />
-    </button>
-    </div>
-
+           <Button />
+            </div>
     </motion.div>
   </div>
 </section>

@@ -1,7 +1,10 @@
+
 import Image from 'next/image'
 import Hero from './components/home/Hero'
 import BrandSlider from './components/home/BrandSlider'
 import AboutUs from './components/home/AboutUs'
+import Courses from './components/home/Courses'
+import HomeGallery from './components/home/HomeGallery'
 
 export default function Home() {
   return (
@@ -10,6 +13,8 @@ export default function Home() {
       <Hero />
       <BrandSlider />
       <AboutUs />
+      <Courses />
+      <HomeGallery />
     </main>
   )
 }

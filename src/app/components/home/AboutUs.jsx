@@ -2,6 +2,7 @@
 import Image from 'next/image'
 import React from 'react'
 import {motion ,AnimatePresence} from "framer-motion"
+import Button from '../ui/Button'
 function AboutUs() {
   const text =`Skill Darshan is a fully-featured Skill Development platform that
   helps student to learn skills from published video courses,
@@ -80,27 +81,7 @@ function AboutUs() {
 
         </p>
 
-        <a
-  className="inline-flex items-center bg-primary  gap-2 rounded-lg border border-black hover:border-indigo-600 px-8 py-2 text-black hover:bg-primary-600 hover:text-black focus:outline-none focus:ring active:bg-indigo-500"
-  href="#"
->
-  <span className="text-sm font-medium"> Know More </span>
-
-  <svg
-    className="h-5 w-5 rtl:rotate-180"
-    xmlns="http://www.w3.org/2000/svg"
-    fill="none"
-    viewBox="0 0 24 24"
-    stroke="currentColor"
-  >
-    <path
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      strokeWidth="2"
-      d="M17 8l4 4m0 0l-4 4m4-4H3"
-    />
-  </svg>
-</a>
+        <Button  />
       </motion.div>
     </div>
     </div>

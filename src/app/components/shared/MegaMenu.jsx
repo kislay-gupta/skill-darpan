@@ -30,7 +30,7 @@ function MegaMenu() {
   };
 
   return (
-    <div className="nav z-50 sticky top-0 bg-white">
+    <div className="nav z-50 hidden md:block sticky top-0 bg-white">
       <header class="container  mx-auto px-2 py-3 flex items-center justify-between">
         <a href="#" class=" font-bold text-black text-xl">
           <Image
@@ -45,40 +45,24 @@ function MegaMenu() {
         <nav className="m-auto">
           <ul class="flex items-center justify-center font-semibold">
             <li class="relative group px-1 py-2">
-              <button
-                class="duration-250  relative flex cursor-pointer
-                px-2
-                py-2
-                transition-all
-                before:absolute
-                before:-bottom-0.5
-                before:left-1/2
-                before:h-1
-                before:w-0
-                before:-translate-x-1/2
-                before:rounded-full
-                before:bg-gradient-to-r
-                before:from-blue-600
-                before:via-blue-400
-                before:to-blue-500
-                before:opacity-0
-                before:transition-all
-                before:duration-500
-                before:content-['']
-                hover:text-primary
-                hover:before:w-3/4
-                hover:before:opacity-100 "
-                aria-haspopup="true"
-              >
-                Category
-              </button>
-              <div class="absolute lg:-left-4 top-8 transition group-hover:translate-y-5 translate-y-0 opacity-0 invisible rounded-b-lg group-hover:opacity-100 group-hover:visible duration-500 ease-in-out group-hover:transform z-50 min-w-max h-fit bg-white transform">
+
+              <button className="relative px-5 py-2.5 overflow-hidden font-medium text-white bg-black border border-gray-100 rounded-lg shadow-inner group">
+            <span className="absolute top-0 left-0 w-0 h-0 transition-all duration-200 border-t-2 border-primary group-hover:w-full"></span>
+            <span className="absolute bottom-0 right-0 w-0 h-0 transition-all duration-200 border-b-2 border-primary group-hover:w-full"></span>
+            <span className="absolute top-0 left-0 w-full h-0 transition-all duration-300 delay-200 bg-primary group-hover:h-full"></span>
+            <span className="absolute bottom-0 left-0 w-full h-0 transition-all duration-300 delay-200 bg-primary group-hover:h-full"></span>
+            <span className="absolute inset-0 w-full h-full duration-300 delay-300 bg-primary opacity-0 group-hover:opacity-100"></span>
+            <span className="relative transition-colors duration-300 delay-200 group-hover:text-black">
+            Category
+            </span>
+          </button>
+              <div class="absolute lg:-left-4 top-9 transition group-hover:translate-y-5 translate-y-0 opacity-0 invisible rounded-b-lg group-hover:opacity-100 group-hover:visible duration-500 ease-in-out group-hover:transform z-50 min-w-max h-fit bg-white transform">
                 <div class="relative  top-4 p-6  shadow-xl w-fit">
                   <div class="relative  h-max z-10">
                     <div class="grid grid-cols-2 gap-6">
-                      <div className=" h-[22rem] overflow-y-auto">
+                    <div className=" h-[22rem] overflow-y-auto">
                         <ul className=" space-y-1">
-                          {navbar.map((nav, id) => {
+                        {navbar.map((nav, id) => {
                             return (
                               <>
                                 <li className="py-1">
