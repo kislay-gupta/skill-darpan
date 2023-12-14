@@ -99,6 +99,7 @@ function Courses() {
                       mostPopular.map((data, id) => {
                         return (
                           <motion.div
+                          key={id}
                             className="my-2 md:my-4 mx-2"
                             initial={{ opacity: 0, y: 50 }}
                             whileInView={{ opacity: 1, y: [50, 0] }}
@@ -115,7 +116,7 @@ function Courses() {
                       programming.map((data, id) => {
                         return (
                           <>
-                          <motion.div
+                          <motion.div key={id}
                             className="my-2 md:my-4 mx-2"
                             initial={{ opacity: 0, y: 50 }}
                             whileInView={{ opacity: 1, y: [50, 0] }}
@@ -133,6 +134,7 @@ function Courses() {
                       business.map((data, id) => {
                         return (
                           <motion.div
+                          key={id}
                             className="my-2 md:my-4 mx-2"
                             initial={{ opacity: 0, y: 50 }}
                             whileInView={{ opacity: 1, y: [50, 0] }}
@@ -147,6 +149,7 @@ function Courses() {
                       coreEng.map((data, id) => {
                         return (
                           <motion.div
+                          key={id}
                             className="my-2 md:my-4 mx-2"
                             initial={{ opacity: 0, y: 50 }}
                             whileInView={{ opacity: 1, y: [50, 0] }}
@@ -162,6 +165,7 @@ function Courses() {
                       dataScience.map((data, id) => {
                         return (
                           <motion.div
+                          key={id}
                             className="my-2 md:my-4 mx-2"
                             initial={{ opacity: 0, y: 50 }}
                             whileInView={{ opacity: 1, y: [50, 0] }}
