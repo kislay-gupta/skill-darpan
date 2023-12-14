@@ -38,12 +38,12 @@ function MegaMenu() {
             height={100}
             width={150}
             className="m-0 object-contain"
-            alt="Health Optima"
+            alt="SKill Darpan logo"
             loading="lazy"
           />
         </a>
         <nav className="m-auto">
-          <ul class="flex items-center justify-center font-semibold">
+          <ul class="flex items-center justify-center font-normal">
             <li class="relative group px-1 py-2">
 
               <button className="relative px-5 py-2.5 overflow-hidden font-medium text-white bg-black border border-gray-100 rounded-lg shadow-inner group">
