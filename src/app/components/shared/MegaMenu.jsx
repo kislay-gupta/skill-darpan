@@ -191,24 +191,7 @@ function MegaMenu() {
                             })}
                           </ul>
                         )}
-                        {isHovering == "Creative Arts" && (
-                          <ul class="mt-3">
-                            {creativeArts.map((data) => {
-                              return (
-                                <>
-                                  <li className="w-max leading-loose">
-                                    <a
-                                      href="#"
-                                      class="relative after:absolute hover:text-blue-500 after:bg-blue-500 after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 hover:after:origin-bottom-left hover:after:scale-x-100 after:transition-transform after:ease-in-out after:duration-300"
-                                    >
-                                      {data.title}
-                                    </a>
-                                  </li>
-                                </>
-                              );
-                            })}
-                          </ul>
-                        )}
+
                         {isHovering == "Language" && (
                           <ul class="mt-3">
                             {languages.map((data) => {

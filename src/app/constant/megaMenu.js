@@ -67,10 +67,7 @@ const programming = [
     title: "Data Structures & Algorithms",
     subtitle: "lorem ispum",
   },
-  {
-    title: "Clinical Trials Analysis & Reporting",
-    subtitle: "lorem ispum",
-  },
+
   {
     title: "MATLAB",
     subtitle: "lorem ispum",
@@ -83,10 +80,7 @@ const programming = [
     title: "Cloud Computing with AWS",
     subtitle: "lorem ispum",
   },
-  {
-    title: "PLC Programming",
-    subtitle: "lorem ispum",
-  },
+
   {
     title: "Product Management",
     subtitle: "lorem ispum",
@@ -111,10 +105,7 @@ const programming = [
     title: "Git & GitHub",
     subtitle: "lorem ispum",
   },
-  {
-    title: "How to Ace Coding Interviews",
-    subtitle: "lorem ispum",
-  },
+
   {
     title: "Full Stack Development Courses",
     subtitle: "lorem ispum",
@@ -130,10 +121,7 @@ const business = [
     title: "Advanced Excel",
     subtitle: "lorem ispum",
   },
-  {
-    title: "Financial Modeling and Valuation",
-    subtitle: "lorem ispum",
-  },
+
   {
     title: "Business Analytics",
     subtitle: "lorem ispum",
@@ -166,10 +154,7 @@ const business = [
     title: "Product Management",
     subtitle: "lorem ispum",
   },
-  {
-    title: "Personal Finance 101",
-    subtitle: "lorem ispum",
-  },
+
   {
     title: "Digital Marketing Course",
     subtitle: "lorem ispum",
@@ -196,26 +181,24 @@ const coreEng = [
   { title: "Advanced SOLIDWORKS" },
   { title: "Fusion 360" },
   { title: "Internet of Things" },
-  { title: "Siemens NX" },
+
   { title: "3D Printing" },
-  { title: "Embedded Systems" },
-  { title: "LabVIEW" },
+
+
   { title: "Engineering Drawing" },
-  { title: "Creo Parametric" },
+
 ];
 const dataScience = [
   { title: "Machine Learning" },
   { title: "Data Science" },
   { title: "Business Analytics" },
-  { title: "Clinical Trials Analysis & Reporting" },
+
   { title: "SQL for Data Analytics" },
-  { title: "Power BI" },
+
   { title: "Deep Learning" },
-  { title: "Tableau" },
+
   { title: "SAS Programming" },
-  { title: "Natural Language Processing" },
-  { title: "Statistics for Data Science" },
-  { title: "Data Science Course" },
+
 ];
 const design = [
   {
@@ -236,43 +219,13 @@ const design = [
   {
     title: "WordPress",
   },
-  {
-    title: "Colour Theory for Designers",
-  },
-  {
-    title: "Adobe Illustrator",
-  },
+
+
   {
     title: "UI/UX Course",
   },
 ];
-const creativeArts = [
-  {
-    title: "Creative Writing",
-    description: "The art of crafting stories, poems, and other forms of imaginative writing.",
-    image: "https://www.writersdigest.com/wp-content/uploads/2020/07/writers-block-shutterstock_1753688164.jpg",
-  },
-  {
-    title: "Photography",
-    description: "The art of capturing moments in time with a camera.",
-    image: "https://www.digitalcameraworld.com/sites/digitalcameraworld.com/files/styles/w_768_h_432/public/2023/01/landscape-photography-tips-how-to-take-stunning-images-of-the-natural-world.jpg?itok=7_4vX3wS",
-  },
-  {
-    title: "Guitar",
-    description: "A string instrument that can be played solo or in a group.",
-    image: "https://www.fender.com/sites/default/files/styles/large_1x/public/2022-05/acoustic-electric-electric-guitars-hero@2x.jpg?itok=5vK_1rYc",
-  },
-  {
-    title: "Calligraphy",
-    description: "The art of beautiful handwriting.",
-    image: "https://www.calligraphy.org/wp-content/uploads/2022/07/calligraphy-supplies-essential-tools-for-beginners.jpg",
-  },
-  {
-    title: "Acting",
-    description: "The art of portraying a character on stage or in film.",
-    image: "https://www.backstage.com/wp-content/uploads/2022/08/Acting-Classes-Los-Angeles_1200x675.jpg",
-  },
-];
+
 const languages = [
   {
     title: "English",
@@ -284,26 +237,7 @@ const languages = [
       "Dynamic and evolving",
     ],
   },
-  {
-    title: "French",
-    description: "The language of romance and culture",
-    image: "https://www.france.fr/sites/default/files/inline-images/tourisme-en-france_07.jpg",
-    benefits: [
-      "Gateway to Europe",
-      "Beautiful and melodic",
-      "Associated with sophistication and elegance",
-    ],
-  },
-  {
-    title: "Spanish",
-    description: "The widest spoken native language globally",
-    image: "https://www.britannica.com/topic/Spanish-language/images-videos/1/135348/original/Spanish-speaking-world.jpg",
-    benefits: [
-      "Vibrant and diverse culture",
-      "Relatively easy to learn",
-      "Opens opportunities in Latin America and Spain",
-    ],
-  },
+
 ];
 const careerDevelopment = [
   {
@@ -321,12 +255,7 @@ const careerDevelopment = [
     description: "Prepare for internships and job opportunities with essential skills.",
 
   },
-  {
-    title: "How to Ace Coding Interviews",
-    description: "Master the technical skills and interview strategies for success.",
-    image: "https://www.interviewcake.com/blog/cracking-the-coding-interview-book",
 
-  },
   {
     title: "Interview Preparation",
     description: "Enhance your interview performance and increase your chances of getting hired.",
@@ -345,17 +274,7 @@ const architecture = [
       "Used across various industries",
     ],
   },
-  {
-    title: "Revit",
-    description: "A building information modeling (BIM) software used for design, documentation, and construction of buildings.",
-    image: "https://images.autodesk.com/adsk/files/revit_2023_social_300x300.jpg",
-    benefits: [
-      "Improves collaboration and communication between teams",
-      "Increases efficiency and productivity",
-      "Reduces errors and rework",
-      "Supports sustainable design and construction",
-    ],
-  },
+
   {
     title: "AutoCAD 3D",
     description: "An extension of AutoCAD that allows users to create 3D models and drawings.",
@@ -491,7 +410,7 @@ module.exports = {
   coreEng,
   dataScience,
   design,
-  creativeArts,
+
   languages,
   careerDevelopment,
   architecture,

@@ -29,11 +29,7 @@ const navbar = [
     name: "Design",
     link: "",
   },
-  {
-    id:"6",
-    name: "Creative Arts",
-    link: "",
-  },
+
   {
     id:"7",
     name: "Language",
@@ -51,7 +47,7 @@ const navbar = [
   },
   {
     id:"7",
-    name: "Placement Guarantee Courses",
+    name: "Job Guarantee Courses",
     link: "download",
   },
 

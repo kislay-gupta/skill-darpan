@@ -1,4 +1,4 @@
-import { architecture, business, careerDevelopment, coreEng, creativeArts, dataScience, design, languages, placement, programming } from '@/app/constant/megaMenu'
+import { architecture, business, careerDevelopment, coreEng,  dataScience, design, languages, placement, programming } from '@/app/constant/megaMenu'
 import Image from 'next/image'
 import React from 'react'
 
@@ -96,21 +96,7 @@ function Footer() {
 
         </nav>
       </div>
-      <div class="lg:w-1/4 md:w-1/2 w-full px-4">
-        <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">Creative Arts</h2>
-        <nav class="list-none mb-10">
-        {creativeArts.map((data,id)=>{
-            return(
-              <>
-               <li>
-            <a class="relative after:absolute  after:bg-blue-500 after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 hover:after:origin-bottom-left hover:after:scale-x-100 after:transition-transform after:ease-in-out after:duration-300">{data.title}</a>
-          </li>
-              </>
-            )
-          })}
 
-        </nav>
-      </div>
       <div class="lg:w-1/4 md:w-1/2 w-full px-4">
         <h2 class="title-font font-medium text-gray-900 tracking-widest text-sm mb-3">Language</h2>
         <nav class="list-none mb-10">
