@@ -42,7 +42,7 @@ export default function Page({ params }) {
         </p>
         <p className="text-base leading-8 my-5">
           Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
+          industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever
           since the 1500s, when an unknown printer took a galley of type and
           scrambled it to make a type specimen book. It has survived not only
           five centuries, but also the leap into electronic typesetting,
@@ -54,7 +54,7 @@ export default function Page({ params }) {
         <h3 className="text-2xl font-bold my-5">#1. What is Lorem Ipsum?</h3>
         <p className="text-base leading-8 my-5">
           Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
+          industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever
           since the 1500s, when an unknown printer took a galley of type and
           scrambled it to make a type specimen book. It has survived not only
           five centuries, but also the leap into electronic typesetting,
@@ -65,12 +65,12 @@ export default function Page({ params }) {
         </p>
         <blockquote className="border-l-4 text-base italic leading-8 my-5 p-5 text-indigo-600">
           Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
+          industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever
           since the 1500s
         </blockquote>
         <p className="text-base leading-8 my-5">
           Lorem Ipsum is simply dummy text of the printing and typesetting
-          industry. Lorem Ipsum has been the industry's standard dummy text ever
+          industry. Lorem Ipsum has been the industry&#39;s standard dummy text ever
           since the 1500s, when an unknown printer took a galley of type and
           scrambled it to make a type specimen book. It has survived not only
           five centuries, but also the leap into electronic typesetting,
