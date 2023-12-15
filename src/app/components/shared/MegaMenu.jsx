@@ -9,8 +9,7 @@ import {
   dataScience,
   business,
   design,
-  creativeArts,
-  languages,
+    languages,
   careerDevelopment,
   architecture,
   placement,
@@ -18,6 +17,7 @@ import {
 } from "@/app/constant/megaMenu";
 import navbar from "@/app/constant/menu";
 import Image from "next/image";
+import Link from "next/link";
 function MegaMenu() {
   const [isHovering, setIsHovering] = useState("Most Popular");
 
@@ -32,7 +32,7 @@ function MegaMenu() {
   return (
     <div className="nav z-50 hidden md:block sticky top-0 bg-white">
       <header class="container  mx-auto px-2 py-3 flex items-center justify-between">
-        <a href="#" class=" font-bold text-black text-xl">
+        <a href="/" class=" font-bold text-black text-xl">
           <Image
             src="/logo.png"
             height={100}
@@ -340,12 +340,13 @@ function MegaMenu() {
                         return (
                           <>
                             <li>
-                              <a
-                                href="#"
+                              <Link
+                                href={nav.link}
+
                                 class="relative after:absolute hover:text-blue-500 after:bg-blue-500 after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 hover:after:origin-bottom-left hover:after:scale-x-100 after:transition-transform after:ease-in-out after:duration-300"
                               >
                                 {nav.title}
-                              </a>
+                              </Link>
                             </li>
                           </>
                         );

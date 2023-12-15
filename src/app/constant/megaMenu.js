@@ -375,31 +375,37 @@ const resource = [
     title: "Rewards",
     description: "Earn and redeem rewards for engaging with the platform.",
     icon: "",
+    link:"",
   },
   {
     title: "Referral",
     description: "Invite friends and earn rewards when they join.",
     icon: "",
+    link:"",
   },
   {
     title: "Forum Support",
     description: "Get help and support from other users and community experts.",
     icon: "",
+    link:"",
   },
   {
     title: "Blogs",
     description: "Read informative articles and insights from industry professionals.",
     icon: "",
+    link:"/blog",
   },
   {
     title: "App Download",
     description: "Download the app for a more convenient and mobile-friendly experience.",
     icon: "",
+    link:"",
   },
   {
     title: "Become an Affiliate",
     description: "Promote the platform and earn commission on sales.",
     icon: "",
+    link:"",
   },
 ];
 

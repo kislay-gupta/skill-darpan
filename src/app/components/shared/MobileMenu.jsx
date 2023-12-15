@@ -9,6 +9,7 @@ import {
 
   } from "@/components/ui/accordion"
 import Image from 'next/image';
+import { resource } from '@/app/constant/megaMenu';
 
 function MobileMenu() {
     const [nav, setNav] = useState(false);
@@ -40,13 +41,13 @@ function MobileMenu() {
       setMenuOpen(!isMenuOpen);
     };
   return (
-    <div>
-        <div className="z-50 flex px-2 justify-end sticky top-10 w-full overflow-y-auto   h-20 bg-white md:hidden py-1 ">
-        <div className="relative block flex-1 mx-auto    my-auto lg:p-6 text-xl text-blue-600 font-bold">
+    <div className='nav z-40 md:hidden  sticky top-0 bg-white'>
+        <div className=" flex px-2 justify-end    w-full    h-16 bg-white md:hidden py-1 ">
+        <div className="relative block flex-1 mx-auto    my-auto  text-xl text-blue-600 font-bold">
         <Link href="/"><Image src="/logo.png" height={100} alt='logo' width={100}/> </Link>
           </div>
           <button
-              className={`relative order-10 block h-10 w-10 self-center lg:hidden
+              className={`relative z-50 order-10 block h-10 w-10 self-center lg:hidden
               ${
                 showSidebar
                   ? "visible opacity-100 [&_span:nth-child(1)]:w-6 [&_span:nth-child(1)]:translate-y-0 [&_span:nth-child(1)]:rotate-45 [&_span:nth-child(3)]:w-0 [&_span:nth-child(2)]:-rotate-45 "
@@ -75,10 +76,10 @@ function MobileMenu() {
 
         </div>
         <div
-          className={`top-8 mt-20 overflow-y-scroll  right-0 w-4/5 bg-white px-4   text-black fixed h-full z-40  ease-in-out duration-300 ${showSidebar ? "translate-x-0 " : "translate-x-full"
+          className={` top-10  right-0 w-2/3 bg-white px-4   text-black fixed h-full z-30  ease-in-out duration-300 ${showSidebar ? "translate-x-0 " : "translate-x-full"
             }`}
         >
-            <Accordion type="multiple" className=" overscroll-auto w-full shadow-none"  collapsible="true">
+            <Accordion type="multiple" className=" overscroll-auto my-8 mx-auto w-full shadow-none"  collapsible="true">
             <AccordionItem className="shadow-none" value="item-8">
     <AccordionTrigger className="shadow-none w-full"><Link href="/" onClick={() => setShowSidebar(!showSidebar)} >Home </Link> </AccordionTrigger>
     <AccordionContent>
@@ -94,7 +95,13 @@ function MobileMenu() {
     </AccordionContent>
   </AccordionItem>
   <AccordionItem className="shadow-none" value="item-2">
-    <AccordionTrigger className="shadow-none  w-full">Categories</AccordionTrigger>
+    <AccordionTrigger className="shadow-none  w-full">
+      <Link href="#test" onClick={() => setShowSidebar(!showSidebar)}>
+
+
+      Categories
+      </Link>
+      </AccordionTrigger>
     <AccordionContent className="overflow-auto">
 
     </AccordionContent>
@@ -106,15 +113,33 @@ function MobileMenu() {
       </AccordionTrigger>
 
   </AccordionItem>
-  <AccordionItem className="shadow-none " value="item-6">
-    <AccordionTrigger className="w-full "  onClick={() => setShowSidebar(!showSidebar)} >Resources</AccordionTrigger>
+  <AccordionItem className="shadow-none " value="item-7">
+    <AccordionTrigger className="w-full "  >Resources</AccordionTrigger>
+      <AccordionContent>
+      <div class="text-[15px] space-y-1">
+                      {resource.map((nav, id) => {
+                        return (
+                          <>
+                            <li>
+                              <Link
+                                href={nav.link}
 
+                                class="relative after:absolute hover:text-blue-500 after:bg-blue-500 after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 hover:after:origin-bottom-left hover:after:scale-x-100 after:transition-transform after:ease-in-out after:duration-300"
+                              >
+                                {nav.title}
+                              </Link>
+                            </li>
+                          </>
+                        );
+                      })}
+                    </div>
+      </AccordionContent>
   </AccordionItem>
-  <AccordionItem className="shadow-none " value="item-6">
+  <AccordionItem className="shadow-none " value="item-8">
     <AccordionTrigger className="w-full "  onClick={() => setShowSidebar(!showSidebar)} > <Link href="#">Job</Link></AccordionTrigger>
 
   </AccordionItem>
-  <AccordionItem className="shadow-none " value="item-6">
+  <AccordionItem className="shadow-none " value="item-9">
     <AccordionTrigger className="w-full "  onClick={() => setShowSidebar(!showSidebar)} > <Link href="#">Gallery</Link></AccordionTrigger>
 
   </AccordionItem>

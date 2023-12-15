@@ -1,4 +1,4 @@
-import { Montserrat } from 'next/font/google'
+import { Quicksand } from 'next/font/google'
 import './globals.css'
 import Navbar from './components/shared/Navbar'
 import Footer from './components/shared/Footer'
@@ -7,7 +7,7 @@ import MegaMenu from './components/shared/MegaMenu'
 import NextTopLoader from 'nextjs-toploader'
 import MobileMenu from './components/shared/MobileMenu'
 
-const montserrat = Montserrat({ subsets: ['latin'] })
+const quicksand = Quicksand({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Skill Darpan',
@@ -17,7 +17,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
-      <body className={montserrat.className}>
+      <body className={quicksand.className}>
         <NextTopLoader
         color="#F09D25"
         />

@@ -81,6 +81,16 @@ function BrandSlider() {
               />
             </div>
           </SwiperSlide>
+          <SwiperSlide>
+            <div className="rounded-xl w-fit md:w-max h-max mx-auto  mt-10   ">
+              <Image
+                src="/brandLogo/iso.png"
+                alt="iso logo"
+                width={200}
+                height={200}
+              />
+            </div>
+          </SwiperSlide>
         </Swiper>
       </AnimatePresence>
     </div>
