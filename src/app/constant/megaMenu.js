@@ -184,9 +184,7 @@ const coreEng = [
 
   { title: "3D Printing" },
 
-
   { title: "Engineering Drawing" },
-
 ];
 const dataScience = [
   { title: "Machine Learning" },
@@ -198,7 +196,6 @@ const dataScience = [
   { title: "Deep Learning" },
 
   { title: "SAS Programming" },
-
 ];
 const design = [
   {
@@ -220,7 +217,6 @@ const design = [
     title: "WordPress",
   },
 
-
   {
     title: "UI/UX Course",
   },
@@ -229,21 +225,24 @@ const design = [
 const languages = [
   {
     title: "English",
-    description: "The lingua franca of international business, travel, and diplomacy",
-    image: "https://www.britannica.com/topic/English-language/images-videos/1/341303/original/English-languages-map.jpg",
+    description:
+      "The lingua franca of international business, travel, and diplomacy",
+    image:
+      "https://www.britannica.com/topic/English-language/images-videos/1/341303/original/English-languages-map.jpg",
     benefits: [
       "Spoken globally",
       "Rich literary heritage",
       "Dynamic and evolving",
     ],
   },
-
 ];
 const careerDevelopment = [
   {
     title: "Business Communication Skills",
-    description: "Develop effective communication skills for professional settings.",
-    image: "https://www.indeed.com/career-advice/finding-a-job/communication-skills-for-work",
+    description:
+      "Develop effective communication skills for professional settings.",
+    image:
+      "https://www.indeed.com/career-advice/finding-a-job/communication-skills-for-work",
     benefits: [
       "Improved collaboration and teamwork",
       "Increased clarity and persuasiveness",
@@ -252,21 +251,23 @@ const careerDevelopment = [
   },
   {
     title: "Internship & Job Preparation",
-    description: "Prepare for internships and job opportunities with essential skills.",
-
+    description:
+      "Prepare for internships and job opportunities with essential skills.",
   },
 
   {
     title: "Interview Preparation",
-    description: "Enhance your interview performance and increase your chances of getting hired.",
-
+    description:
+      "Enhance your interview performance and increase your chances of getting hired.",
   },
 ];
 const architecture = [
   {
     title: "AutoCAD",
-    description: "A powerful and versatile 2D and 3D CAD software for drafting, designing, and documenting.",
-    image: "https://images.autodesk.com/adsk/files/autocad_2023_social_300x300.jpg",
+    description:
+      "A powerful and versatile 2D and 3D CAD software for drafting, designing, and documenting.",
+    image:
+      "https://images.autodesk.com/adsk/files/autocad_2023_social_300x300.jpg",
     benefits: [
       "Creates precise and accurate drawings",
       "Offers a wide range of tools and features",
@@ -277,8 +278,10 @@ const architecture = [
 
   {
     title: "AutoCAD 3D",
-    description: "An extension of AutoCAD that allows users to create 3D models and drawings.",
-    image: "https://images.autodesk.com/adsk/files/autocad_3d_2023_social_300x300.jpg",
+    description:
+      "An extension of AutoCAD that allows users to create 3D models and drawings.",
+    image:
+      "https://images.autodesk.com/adsk/files/autocad_3d_2023_social_300x300.jpg",
     benefits: [
       "Enables visualization of designs in 3D",
       "Facilitates design communication and collaboration",
@@ -291,8 +294,10 @@ const architecture = [
 const placement = [
   {
     title: "Full Stack Development Course",
-    image: "https://images.simplilearn.com/blogs/wp-content/uploads/2023/05/01121752/full-stack-web-developer.jpg",
-    description: "Learn the essential skills to design and develop both the front-end and back-end of web applications. This comprehensive course covers HTML, CSS, JavaScript, Node.js, React.js, and other in-demand technologies.",
+    image:
+      "https://images.simplilearn.com/blogs/wp-content/uploads/2023/05/01121752/full-stack-web-developer.jpg",
+    description:
+      "Learn the essential skills to design and develop both the front-end and back-end of web applications. This comprehensive course covers HTML, CSS, JavaScript, Node.js, React.js, and other in-demand technologies.",
     benefits: [
       "High demand in the job market",
       "Competitive salaries",
@@ -302,8 +307,10 @@ const placement = [
   },
   {
     title: "Data Science Course",
-    image: "https://static.greatlearning.com/courses/data-science-and-business-analytics/data-science-career-path.png",
-    description: "Master the tools and techniques for extracting insights from data. This course covers Python, statistics, machine learning, data visualization, and more. Gain the skills to solve real-world problems using data.",
+    image:
+      "https://static.greatlearning.com/courses/data-science-and-business-analytics/data-science-career-path.png",
+    description:
+      "Master the tools and techniques for extracting insights from data. This course covers Python, statistics, machine learning, data visualization, and more. Gain the skills to solve real-world problems using data.",
     benefits: [
       "Growing demand across industries",
       "Lucrative career options",
@@ -313,8 +320,10 @@ const placement = [
   },
   {
     title: "Human Resource Management Course",
-    image: "https://images.jigsawacademy.com/blogs/wp-content/uploads/2020/09/human-resource-management-3.jpg",
-    description: "Develop the skills and knowledge needed to excel in the field of human resource management. This course covers core HR functions, recruitment, talent management, employee relations, and more.",
+    image:
+      "https://images.jigsawacademy.com/blogs/wp-content/uploads/2020/09/human-resource-management-3.jpg",
+    description:
+      "Develop the skills and knowledge needed to excel in the field of human resource management. This course covers core HR functions, recruitment, talent management, employee relations, and more.",
     benefits: [
       "High demand across various industries",
       "Diverse career opportunities",
@@ -324,8 +333,10 @@ const placement = [
   },
   {
     title: "Digital Marketing Course",
-    image: "https://images.jigsawacademy.com/blogs/wp-content/uploads/2022/08/digital-marketing-course-jigsaw-academy_1200x628.png",
-    description: "Learn the strategies and techniques to reach your target audience online. This course covers SEO, social media marketing, content marketing, paid advertising, and more.",
+    image:
+      "https://images.jigsawacademy.com/blogs/wp-content/uploads/2022/08/digital-marketing-course-jigsaw-academy_1200x628.png",
+    description:
+      "Learn the strategies and techniques to reach your target audience online. This course covers SEO, social media marketing, content marketing, paid advertising, and more.",
     benefits: [
       "Growing demand across industries",
       "Measurable results",
@@ -335,7 +346,8 @@ const placement = [
   },
   {
     title: "Electric Vehicle Course",
-    description: "Gain knowledge and skills in the rapidly growing field of electric vehicles. This course covers EV technology, charging infrastructure, battery management systems, and more.",
+    description:
+      "Gain knowledge and skills in the rapidly growing field of electric vehicles. This course covers EV technology, charging infrastructure, battery management systems, and more.",
     benefits: [
       "High demand in the automotive industry",
       "Contribute to sustainability",
@@ -345,7 +357,8 @@ const placement = [
   },
   {
     title: "Business Development Course",
-    description: "Learn the strategies and techniques for identifying and securing new business opportunities. This course covers market research, lead generation, sales negotiation, and more.",
+    description:
+      "Learn the strategies and techniques for identifying and securing new business opportunities. This course covers market research, lead generation, sales negotiation, and more.",
     benefits: [
       "Essential skill for entrepreneurs and business professionals",
       "Increase sales and revenue",
@@ -355,8 +368,10 @@ const placement = [
   },
   {
     title: "UI/UX Course",
-    image: "https://images.jigsawacademy.com/blogs/wp-content/uploads/2023/08/uiux-design_1200x628.png",
-    description: "Learn how to design user-centered interfaces and experiences. This course covers design principles, user research, prototyping, and more.",
+    image:
+      "https://images.jigsawacademy.com/blogs/wp-content/uploads/2023/08/uiux-design_1200x628.png",
+    description:
+      "Learn how to design user-centered interfaces and experiences. This course covers design principles, user research, prototyping, and more.",
     benefits: [
       "High demand in the tech industry",
       "Create user-friendly and intuitive interfaces",
@@ -366,46 +381,50 @@ const placement = [
   },
   {
     title: "Product Management Course",
-    image: "https://images.simplilearn.com/blogs/wp-content/uploads/2023/05/05114946/what-is-product-management-1.jpg",
-    description: "Learn the skills and knowledge needed to manage the entire product lifecycle. This course covers product strategy, market research, product roadmapping, and more"
-  }
-]
+    image:
+      "https://images.simplilearn.com/blogs/wp-content/uploads/2023/05/05114946/what-is-product-management-1.jpg",
+    description:
+      "Learn the skills and knowledge needed to manage the entire product lifecycle. This course covers product strategy, market research, product roadmapping, and more",
+  },
+];
 const resource = [
   {
     title: "Rewards",
     description: "Earn and redeem rewards for engaging with the platform.",
     icon: "",
-    link:"",
+    link: "",
   },
   {
     title: "Referral",
     description: "Invite friends and earn rewards when they join.",
     icon: "",
-    link:"",
+    link: "",
   },
   {
     title: "Forum Support",
     description: "Get help and support from other users and community experts.",
     icon: "",
-    link:"",
+    link: "",
   },
   {
     title: "Blogs",
-    description: "Read informative articles and insights from industry professionals.",
+    description:
+      "Read informative articles and insights from industry professionals.",
     icon: "",
-    link:"/blog",
+    link: "/blog",
   },
   {
     title: "App Download",
-    description: "Download the app for a more convenient and mobile-friendly experience.",
+    description:
+      "Download the app for a more convenient and mobile-friendly experience.",
     icon: "",
-    link:"",
+    link: "",
   },
   {
     title: "Become an Affiliate",
     description: "Promote the platform and earn commission on sales.",
     icon: "",
-    link:"",
+    link: "",
   },
 ];
 
@@ -422,5 +441,4 @@ module.exports = {
   architecture,
   placement,
   resource,
-
 };

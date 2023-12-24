@@ -1,93 +1,95 @@
-"use client"
-import Image from 'next/image'
-import React from 'react'
-import {motion ,AnimatePresence} from "framer-motion"
-import Button from '../ui/Button'
+"use client";
+import Image from "next/image";
+import React, { useEffect, useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import Button from "../ui/Button";
+import axios from "axios";
+import Loader from "../shared/Loader";
 function AboutUs() {
-  const text =`Skill Darshan is a fully-featured Skill Development platform that
-  helps student to learn skills from published video courses,
-  live classes, and text courses , and helps students to learn in the easiest way.
-  Skill Darshan is a fully-featured Skill Development platform that
-  helps student to learn skills from published video courses,
-  live classes, and text courses , and helps students to learn in the easiest way.
-  Skill Darshan is a fully-featured Skill Development platform that
-  helps student to learn skills from published video courses,
-  live classes, and text courses , and helps students to learn in the easiest way.`.split(" ")
+  const [aboutData, setAboutData] = useState([]);
+  const [loaderState, setLoaderState] = useState(true);
+  const getAboutData  = async ()  => {
+    await  axios
+      .get("https://skilldarpan.com/api/abouts")
+      .then(function (response) {
+        // handle success
+        setAboutData(response.data.about[0]);
+        setLoaderState(false)
+
+      })
+      .catch(function (error) {
+        // handle error
+        console.log(error);
+        setLoaderState(false)
+      });
+    };
+
+  useEffect(() => {
+    getAboutData();
+  }, []);
+
+  const text =aboutData.description?.split(
+      " "
+    );
+  const img = aboutData.image
   return (
     <div>
-    <AnimatePresence>
+      {loaderState && <Loader />}
+      <AnimatePresence>
+      {aboutData &&
+        <div className="mx-auto max-w-screen-xl px-4 py-8 sm:py-12 sm:px-6 lg:py-16 lg:px-8">
+          <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 ">
+            <motion.div
+              className="relative h-64 overflow-hidden rounded-lg sm:h-80  lg:h-full"
+              initial={{ opacity: 0, x: [-100] }}
+              whileInView={{ opacity: 1, x: [-100, 0] }}
+              transition={{ duration: 1.5, ease: "easeIn" }}
+            >
 
+              <Image
+                alt="Party"
+                src={`https://skilldarpan.com/public/uploads/${img}`}
+                className="absolute inset-0 h-max w-max   object-contain"
+                width={"200"}
+                height={"200"}
+              />
+            </motion.div>
 
-  <div
-    className="mx-auto max-w-screen-xl px-4 py-8 sm:py-12 sm:px-6 lg:py-16 lg:px-8"
+            <motion.div
+              className="lg:py-24 grid grid-cols-1 justify-items-center"
+              initial={{ opacity: 0, y: 50 }}
+              whileInView={{ opacity: 1, y: [50, 0] }}
+              transition={{ duration: 1.5, ease: "easeIn" }}
+            >
+              <h2 className="text-3xl text-center font-bold sm:text-4xl">
+                About US
+              </h2>
 
-  >
+              <p className="my-4 font-semibold text-center text-black">
+                {text?.map((el, i) => (
+                  <motion.span
+                    initial={{ opacity: 0 }}
+                    whileInView={{ opacity: 1 }}
+                    transition={{
+                      duration: 0.25,
+                      delay: i / 10,
+                    }}
+                    key={i}
+                    viewport={{ once: true }}
+                  >
+                    {el}{" "}
+                  </motion.span>
+                ))}
+              </p>
 
-    <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 ">
-      <motion.div
-        className="relative h-64 overflow-hidden rounded-lg sm:h-80  lg:h-full"
-        initial={{ opacity: 0,
-            x: [ -100 ],
-            }}
-          whileInView={{ opacity: 1,
-            x: [-100, 0 ],
-          }}
-
-          transition={{ duration: 1.5,
-          ease:"easeIn"
-          }}
-      >
-        <Image
-          alt="Party"
-          src="https://camo.githubusercontent.com/cae12fddd9d6982901d82580bdf321d81fb299141098ca1c2d4891870827bf17/68747470733a2f2f6d69726f2e6d656469756d2e636f6d2f6d61782f313336302f302a37513379765349765f7430696f4a2d5a2e676966"
-          className="absolute inset-0 h-max w-max   object-contain"
-          width={"200"}
-          height={"200"}
-
-        />
-      </motion.div>
-
-      <motion.div className="lg:py-24 grid grid-cols-1 justify-items-center"
-        initial={{ opacity: 0,
-            y: 50,
-            }}
-          whileInView={{ opacity: 1,
-            y: [50, 0 ],
-          }}
-
-          transition={{ duration: 1.5,
-          ease:"easeIn"
-          }}
-      >
-
-        <h2 className="text-3xl text-center font-bold sm:text-4xl">About US</h2>
-
-        <p className="my-4 font-semibold text-center text-black">
-        {text.map((el, i) => (
-        <motion.span
-          initial={{ opacity: 0 }}
-          whileInView={{ opacity: 1 }}
-          transition={{
-            duration: 0.25,
-            delay: i / 10
-          }}
-          key={i}
-          viewport={{ once: true }}
-        >
-
-          {el}{" "}
-        </motion.span>
-      ))}
-
-        </p>
-
-        <Button  />
-      </motion.div>
+              <Button />
+            </motion.div>
+          </div>
+        </div>
+      }
+      </AnimatePresence>
     </div>
-    </div>
-    </AnimatePresence>
-    </div>
-  )
+  );
 }
 
-export default AboutUs
+export default AboutUs;

@@ -5,6 +5,7 @@ import BrandSlider from './components/home/BrandSlider'
 import AboutUs from './components/home/AboutUs'
 import Courses from './components/home/Courses'
 import HomeGallery from './components/home/HomeGallery'
+import Team from './components/home/Team'
 
 export default function Home() {
   return (
@@ -13,7 +14,8 @@ export default function Home() {
       <Hero />
       <BrandSlider />
       <AboutUs />
-      <Courses />
+      <Courses  />
+      <Team />
       <HomeGallery />
     </main>
   )

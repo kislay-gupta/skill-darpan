@@ -1,5 +1,5 @@
 "use client"
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/pagination';
@@ -8,7 +8,31 @@ import homeSildes from '../../constant/homeHeroData';
 import Image from 'next/image';
 import { AnimatePresence,motion } from 'framer-motion';
 import Button from '../ui/Button';
+import axios from 'axios';
+import Loader from '../shared/Loader';
 function Hero() {
+  const [loaderState, setLoaderState]= useState(true)
+  const [heroData, setHeroData] = useState()
+   const getHeroData = async()  =>{
+    await axios
+    .get("https://skilldarpan.com/api/heros").
+    then((response)=>{
+      console.log(response.data.hero)
+      setHeroData(response.data.hero)
+      setLoaderState(false)
+    })
+    .catch((error)=>{
+      console.log(error)
+      setLoaderState(false)
+
+    })
+    }
+    useEffect(() => {
+      getHeroData()
+
+
+    }, [])
+    const imgUrl = "https://skilldarpan.com/public/uploads/"
     const container = {
         hidden: { opacity: 1, scale: 0 },
         visible: {
@@ -29,6 +53,8 @@ function Hero() {
       };
   return (
     <div className='overflow-hidden'>
+      {loaderState && <Loader />}
+      {heroData &&
         <AnimatePresence>
 
 
@@ -43,13 +69,14 @@ function Hero() {
         modules={[Autoplay]}
         className="mySwiper"
       >
-        {homeSildes.map((data, id) => {
+        {heroData?.map((data, i) => {
+          console.log(data ,"data inside map")
           return (
             <>
             <SwiperSlide>
             <section className=" ">
                 <Image
-    src={data.bg}
+    src={`https://skilldarpan.com/public/uploads/${data.image}`}
     className="absolute inset-0 md:blur-sm hover:blur-0 h-96  object-cover w-full md:h-full"
     width={500}
     height={500}
@@ -68,9 +95,9 @@ transition={{ duration: 1,
       <motion.h1 className="text-2xl  font-extrabold sm:text-7xl"
 
       >
-      LEARN. SKILL. SUCCESS.
+      {data.title}
       <br />
-        <strong className="font-extrabold  text-xl sm:text-5xl text-blue-700 sm:block"> {data.subTitle} </strong>
+        <strong className="font-extrabold  text-xl sm:text-5xl text-blue-700 sm:block"> {data.blue_description} </strong>
       </motion.h1>
 
       <p className="mt-4  sm:px-24 text-xs/relaxed sm:text-xl/relaxed">
@@ -78,7 +105,7 @@ transition={{ duration: 1,
             </p>
             <div className='my-4'>
 
-           <Button />
+           <Button btn_txt ={data.btn_txt} link={data.link} />
             </div>
     </motion.div>
   </div>
@@ -92,6 +119,7 @@ transition={{ duration: 1,
 
       </Swiper>
       </AnimatePresence>
+      }
     </div>
   )
 }

@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { BsSearch } from "react-icons/bs";
 
 import {
@@ -9,7 +9,7 @@ import {
   dataScience,
   business,
   design,
-    languages,
+  languages,
   careerDevelopment,
   architecture,
   placement,
@@ -18,9 +18,43 @@ import {
 import navbar from "@/app/constant/menu";
 import Image from "next/image";
 import Link from "next/link";
+import axios from "axios";
 function MegaMenu() {
-  const [isHovering, setIsHovering] = useState("Most Popular");
-
+  const [isHovering, setIsHovering] = useState("1");
+  const [loaderState, setLoaderState] = useState(true);
+  const [navData, setNavData] = useState();
+  const [courseData, setCourseData] = useState();
+  const getNavData = async () => {
+    await axios
+      .get("https://skilldarpan.com/api/category")
+      .then((response) => {
+        // console.log(response.data.setting);
+        setNavData(response.data.setting);
+        setLoaderState(false);
+      })
+      .catch((error) => {
+        console.log(error);
+        setLoaderState(false);
+      });
+  };
+  const getCourseData = async () => {
+    await axios
+      .get("https://skilldarpan.com/api/course")
+      .then((response) => {
+        console.log(response.data.setting, "course");
+        setCourseData(response.data.setting);
+        setLoaderState(false);
+      })
+      .catch((error) => {
+        console.log(error);
+        setLoaderState(false);
+      });
+  };
+  useEffect(() => {
+    getNavData();
+    getCourseData();
+  }, []);
+  console.log(isHovering);
   const handleMouseOver = () => {
     setIsHovering(true);
   };
@@ -45,33 +79,32 @@ function MegaMenu() {
         <nav className="m-auto">
           <ul class="flex items-center justify-center font-normal">
             <li class="relative group px-1 py-2">
-
               <button className="relative px-5 py-2.5 overflow-hidden font-medium text-white bg-black border border-gray-100 rounded-lg shadow-inner group">
-            <span className="absolute top-0 left-0 w-0 h-0 transition-all duration-200 border-t-2 border-primary group-hover:w-full"></span>
-            <span className="absolute bottom-0 right-0 w-0 h-0 transition-all duration-200 border-b-2 border-primary group-hover:w-full"></span>
-            <span className="absolute top-0 left-0 w-full h-0 transition-all duration-300 delay-200 bg-primary group-hover:h-full"></span>
-            <span className="absolute bottom-0 left-0 w-full h-0 transition-all duration-300 delay-200 bg-primary group-hover:h-full"></span>
-            <span className="absolute inset-0 w-full h-full duration-300 delay-300 bg-primary opacity-0 group-hover:opacity-100"></span>
-            <span className="relative transition-colors duration-300 delay-200 group-hover:text-black">
-            Category
-            </span>
-          </button>
+                <span className="absolute top-0 left-0 w-0 h-0 transition-all duration-200 border-t-2 border-primary group-hover:w-full"></span>
+                <span className="absolute bottom-0 right-0 w-0 h-0 transition-all duration-200 border-b-2 border-primary group-hover:w-full"></span>
+                <span className="absolute top-0 left-0 w-full h-0 transition-all duration-300 delay-200 bg-primary group-hover:h-full"></span>
+                <span className="absolute bottom-0 left-0 w-full h-0 transition-all duration-300 delay-200 bg-primary group-hover:h-full"></span>
+                <span className="absolute inset-0 w-full h-full duration-300 delay-300 bg-primary opacity-0 group-hover:opacity-100"></span>
+                <span className="relative transition-colors duration-300 delay-200 group-hover:text-black">
+                  Category
+                </span>
+              </button>
               <div class="absolute lg:-left-4 top-9 transition group-hover:translate-y-5 translate-y-0 opacity-0 invisible rounded-b-lg group-hover:opacity-100 group-hover:visible duration-500 ease-in-out group-hover:transform z-50 min-w-max h-fit bg-white transform">
                 <div class="relative  top-4 p-6  shadow-xl w-fit">
                   <div class="relative  h-max z-10">
                     <div class="grid grid-cols-2 gap-6">
-                    <div className=" h-[22rem] overflow-y-auto">
+                      <div className=" h-[22rem] overflow-y-auto">
                         <ul className=" space-y-1">
-                        {navbar.map((nav, id) => {
+                          {navData?.map((nav, i) => {
                             return (
                               <>
                                 <li className="py-1">
                                   <a
                                     href=""
                                     className="relative after:absolute hover:text-blue-500 after:bg-blue-500 after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 hover:after:origin-bottom-left hover:after:scale-x-100 after:transition-transform after:ease-in-out after:duration-300"
-                                    onMouseOver={() => setIsHovering(nav.name)}
+                                    onMouseOver={() => setIsHovering(nav.id)}
                                   >
-                                    {nav.name}
+                                    {nav.category}
                                   </a>
                                 </li>
                               </>
@@ -80,186 +113,206 @@ function MegaMenu() {
                         </ul>
                       </div>
                       <div className="  text-[12px] font-medium leading-loose  h-[22rem] overflow-y-auto">
-                        {isHovering == "Most Popular" && (
+                        {isHovering == "1" && (
                           <ul class="mt-3 ">
-                            {mostPopular.map((data) => {
+                            {courseData?.map((data) => {
                               return (
                                 <>
-                                  <li className="w-52 leading-loose">
-                                    <a
-                                      href="#"
-                                      class="relative after:absolute hover:text-blue-500 after:bg-blue-500 after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 hover:after:origin-bottom-left hover:after:scale-x-100 after:transition-transform after:ease-in-out after:duration-300"
-                                    >
-                                      {data.title}
-                                    </a>
-                                  </li>
+                                  {data.category === "1" && (
+                                    <li className="w-52 leading-loose">
+                                      <a
+                                        href="#"
+                                        class="relative after:absolute hover:text-blue-500 after:bg-blue-500 after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 hover:after:origin-bottom-left hover:after:scale-x-100 after:transition-transform after:ease-in-out after:duration-300"
+                                      >
+                                        {data.title}
+                                      </a>
+                                    </li>
+                                  )}
                                 </>
                               );
                             })}
                           </ul>
                         )}
-                        {isHovering == "Programming" && (
+                        {isHovering == "2" && (
                           <ul class="mt-3">
-                            {programming.map((data) => {
+                            {courseData?.map((data) => {
                               return (
                                 <>
-                                  <li className="w-max leading-loose">
-                                    <a
-                                      href="#"
-                                      class="relative after:absolute hover:text-blue-500 after:bg-blue-500 after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 hover:after:origin-bottom-left hover:after:scale-x-100 after:transition-transform after:ease-in-out after:duration-300"
-                                    >
-                                      {data.title}
-                                    </a>
-                                  </li>
+                                  {data.category === "2" && (
+                                    <li className="w-max leading-loose">
+                                      <a
+                                        href="#"
+                                        class="relative after:absolute hover:text-blue-500 after:bg-blue-500 after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 hover:after:origin-bottom-left hover:after:scale-x-100 after:transition-transform after:ease-in-out after:duration-300"
+                                      >
+                                        {data.title}
+                                      </a>
+                                    </li>
+                                  )}
                                 </>
                               );
                             })}
                           </ul>
                         )}
-                        {isHovering == "Business & Management" && (
+                        {isHovering == "3" && (
                           <ul class="mt-3">
-                            {business.map((data) => {
+                            {courseData?.map((data) => {
                               return (
                                 <>
-                                  <li className="w-max leading-loose">
-                                    <a
-                                      href="#"
-                                      class="relative after:absolute hover:text-blue-500 after:bg-blue-500 after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 hover:after:origin-bottom-left hover:after:scale-x-100 after:transition-transform after:ease-in-out after:duration-300"
-                                    >
-                                      {data.title}
-                                    </a>
-                                  </li>
+                                  {data.category === "3" && (
+                                    <li className="w-max leading-loose">
+                                      <a
+                                        href="#"
+                                        class="relative after:absolute hover:text-blue-500 after:bg-blue-500 after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 hover:after:origin-bottom-left hover:after:scale-x-100 after:transition-transform after:ease-in-out after:duration-300"
+                                      >
+                                        {data.title}
+                                      </a>
+                                    </li>
+                                  )}
                                 </>
                               );
                             })}
                           </ul>
                         )}
-                        {isHovering == "Core Engineering" && (
+                        {isHovering == "4" && (
                           <ul class="mt-3">
-                            {coreEng.map((data) => {
+                            {courseData?.map((data) => {
                               return (
                                 <>
-                                  <li className="w-max leading-loose">
-                                    <a
-                                      href="#"
-                                      class="relative after:absolute hover:text-blue-500 after:bg-blue-500 after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 hover:after:origin-bottom-left hover:after:scale-x-100 after:transition-transform after:ease-in-out after:duration-300"
-                                    >
-                                      {data.title}
-                                      {/* <p class="text-gray-500 font-normal">
+                                  {data.category === "4" && (
+                                    <li className="w-max leading-loose">
+                                      <a
+                                        href="#"
+                                        class="relative after:absolute hover:text-blue-500 after:bg-blue-500 after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 hover:after:origin-bottom-left hover:after:scale-x-100 after:transition-transform after:ease-in-out after:duration-300"
+                                      >
+                                        {data.title}
+                                        {/* <p class="text-gray-500 font-normal">
                                 {data.subtitle}
                               </p> */}
-                                    </a>
-                                  </li>
+                                      </a>
+                                    </li>
+                                  )}
                                 </>
                               );
                             })}
                           </ul>
                         )}
-                        {isHovering == "Data Science" && (
+                        {isHovering == "5" && (
                           <ul class="mt-3">
-                            {dataScience.map((data) => {
+                            {courseData?.map((data) => {
                               return (
                                 <>
-                                  <li className="w-max leading-loose">
-                                    <a
-                                      href="#"
-                                      class="relative after:absolute hover:text-blue-500 after:bg-blue-500 after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 hover:after:origin-bottom-left hover:after:scale-x-100 after:transition-transform after:ease-in-out after:duration-300"
-                                    >
-                                      {data.title}
-                                    </a>
-                                  </li>
+                                  {data.category === "5" && (
+                                    <li className="w-max leading-loose">
+                                      <a
+                                        href="#"
+                                        class="relative after:absolute hover:text-blue-500 after:bg-blue-500 after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 hover:after:origin-bottom-left hover:after:scale-x-100 after:transition-transform after:ease-in-out after:duration-300"
+                                      >
+                                        {data.title}
+                                      </a>
+                                    </li>
+                                  )}
                                 </>
                               );
                             })}
                           </ul>
                         )}
-                        {isHovering == "Design" && (
+                        {isHovering == "6" && (
                           <ul class="mt-3">
-                            {design.map((data) => {
+                            {courseData?.map((data) => {
                               return (
                                 <>
-                                  <li className="w-max leading-loose">
-                                    <a
-                                      href="#"
-                                      class="relative after:absolute hover:text-blue-500 after:bg-blue-500 after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 hover:after:origin-bottom-left hover:after:scale-x-100 after:transition-transform after:ease-in-out after:duration-300"
-                                    >
-                                      {data.title}
-                                    </a>
-                                  </li>
-                                </>
-                              );
-                            })}
-                          </ul>
-                        )}
-
-                        {isHovering == "Language" && (
-                          <ul class="mt-3">
-                            {languages.map((data) => {
-                              return (
-                                <>
-                                  <li className="w-max leading-loose">
-                                    <a
-                                      href="#"
-                                      class="relative after:absolute hover:text-blue-500 after:bg-blue-500 after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 hover:after:origin-bottom-left hover:after:scale-x-100 after:transition-transform after:ease-in-out after:duration-300"
-                                    >
-                                      {data.title}
-                                    </a>
-                                  </li>
-                                </>
-                              );
-                            })}
-                          </ul>
-                        )}
-                        {isHovering == "Career Development" && (
-                          <ul class="mt-3">
-                            {careerDevelopment.map((data) => {
-                              return (
-                                <>
-                                  <li className="w-max leading-loose">
-                                    <a
-                                      href="#"
-                                      class="relative after:absolute hover:text-blue-500 after:bg-blue-500 after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 hover:after:origin-bottom-left hover:after:scale-x-100 after:transition-transform after:ease-in-out after:duration-300"
-                                    >
-                                      {data.title}
-                                    </a>
-                                  </li>
-                                </>
-                              );
-                            })}
-                          </ul>
-                        )}
-                        {isHovering == "Architecture" && (
-                          <ul class="mt-3">
-                            {architecture.map((data) => {
-                              return (
-                                <>
-                                  <li className="w-max leading-loose">
-                                    <a
-                                      href="#"
-                                      class="relative after:absolute hover:text-blue-500 after:bg-blue-500 after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 hover:after:origin-bottom-left hover:after:scale-x-100 after:transition-transform after:ease-in-out after:duration-300"
-                                    >
-                                      {data.title}
-                                    </a>
-                                  </li>
+                                  {data.category === "6" && (
+                                    <li className="w-max leading-loose">
+                                      <a
+                                        href="#"
+                                        class="relative after:absolute hover:text-blue-500 after:bg-blue-500 after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 hover:after:origin-bottom-left hover:after:scale-x-100 after:transition-transform after:ease-in-out after:duration-300"
+                                      >
+                                        {data.title}
+                                      </a>
+                                    </li>
+                                  )}
                                 </>
                               );
                             })}
                           </ul>
                         )}
 
-                        {isHovering == "Placement Guarantee Courses" && (
+                        {isHovering == "7" && (
                           <ul class="mt-3">
-                            {placement.map((data) => {
+                            {courseData?.map((data) => {
                               return (
                                 <>
-                                  <li className="w-max leading-loose">
-                                    <a
-                                      href="#"
-                                      class="relative after:absolute hover:text-blue-500 after:bg-blue-500 after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 hover:after:origin-bottom-left hover:after:scale-x-100 after:transition-transform after:ease-in-out after:duration-300"
-                                    >
-                                      {data.title}
-                                    </a>
-                                  </li>
+                                  {data.category === "7" && (
+                                    <li className="w-max leading-loose">
+                                      <a
+                                        href="#"
+                                        class="relative after:absolute hover:text-blue-500 after:bg-blue-500 after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 hover:after:origin-bottom-left hover:after:scale-x-100 after:transition-transform after:ease-in-out after:duration-300"
+                                      >
+                                        {data.title}
+                                      </a>
+                                    </li>
+                                  )}
+                                </>
+                              );
+                            })}
+                          </ul>
+                        )}
+                        {isHovering == "8" && (
+                          <ul class="mt-3">
+                            {courseData?.map((data) => {
+                              return (
+                                <>
+                                  {data.category === "8" && (
+                                    <li className="w-max leading-loose">
+                                      <a
+                                        href="#"
+                                        class="relative after:absolute hover:text-blue-500 after:bg-blue-500 after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 hover:after:origin-bottom-left hover:after:scale-x-100 after:transition-transform after:ease-in-out after:duration-300"
+                                      >
+                                        {data.title}
+                                      </a>
+                                    </li>
+                                  )}
+                                </>
+                              );
+                            })}
+                          </ul>
+                        )}
+                        {isHovering == "9" && (
+                          <ul class="mt-3">
+                            {courseData?.map((data) => {
+                              return (
+                                <>
+                                  {data.category === "9" && (
+                                    <li className="w-max leading-loose">
+                                      <a
+                                        href="#"
+                                        class="relative after:absolute hover:text-blue-500 after:bg-blue-500 after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 hover:after:origin-bottom-left hover:after:scale-x-100 after:transition-transform after:ease-in-out after:duration-300"
+                                      >
+                                        {data.title}
+                                      </a>
+                                    </li>
+                                  )}
+                                </>
+                              );
+                            })}
+                          </ul>
+                        )}
+
+                        {isHovering == "10" && (
+                          <ul class="mt-3">
+                            {courseData?.map((data) => {
+                              return (
+                                <>
+                                  {data.category === "10" && (
+                                    <li className="w-max leading-loose">
+                                      <a
+                                        href="#"
+                                        class="relative after:absolute hover:text-blue-500 after:bg-blue-500 after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 hover:after:origin-bottom-left hover:after:scale-x-100 after:transition-transform after:ease-in-out after:duration-300"
+                                      >
+                                        {data.title}
+                                      </a>
+                                    </li>
+                                  )}
                                 </>
                               );
                             })}
@@ -342,7 +395,6 @@ function MegaMenu() {
                             <li>
                               <Link
                                 href={nav.link}
-
                                 class="relative after:absolute hover:text-blue-500 after:bg-blue-500 after:bottom-0 after:left-0 after:h-[2px] after:w-full after:origin-bottom-right after:scale-x-0 hover:after:origin-bottom-left hover:after:scale-x-100 after:transition-transform after:ease-in-out after:duration-300"
                               >
                                 {nav.title}
@@ -466,11 +518,12 @@ function MegaMenu() {
                 {/* LEFT */}
                 <span className="absolute bottom-0 left-0 h-0 w-[2px] bg-primary transition-all delay-300 duration-100 group-hover:h-full" />
               </button>
-              </li>
-              <li className="m-auto">
+            </li>
+            <li className="m-auto">
               <button className="group relative px-4 py-2 font-medium text-black transition-colors duration-[400ms]  ">
-                <span><BsSearch />
-</span>
+                <span>
+                  <BsSearch />
+                </span>
 
                 {/* TOP */}
                 <span className="absolute left-0 top-0 h-[2px] w-0 bg-blue-600 transition-all duration-100 group-hover:w-full" />
