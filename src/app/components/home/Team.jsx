@@ -28,11 +28,11 @@ function Team() {
         <img
           src="https://skilldarpan.com/public/uploads/images/supriya-team.jpg"
           alt=""
-          className="mb-4 inline-block h-56 w-full rounded-xl object-cover lg:h-56"
+          className=" inline-block h-56 w-full rounded-xl object-cover lg:h-56"
         />
-        <p className="mb-2 font-bold">Supriya Prabhat
+        <p className=" font-bold">Supriya Prabhat
 </p>
-        <p className="mb-2 text-sm text-[#636262]">CTO, CO-FOUNDER</p>
+        <p className=" text-sm text-[#636262]">CTO, CO-FOUNDER</p>
         <div className="mt-4 flex flex-wrap">
           <a
 
@@ -69,12 +69,12 @@ function Team() {
       {/* Item */}
       <div className="flex flex-col items-center justify-center gap-4 rounded-xl border border-solid border-[#636262] p-4 [box-shadow:rgb(0,_0,_0)_6px_6px] duration-300 hover:shadow-none">
         <img
-          src="https://assets.website-files.com/63904f663019b0d8edf8d57c/63980b3c3c019a6473ee5b4e_Rectangle%2040024-1.jpg"
+          src="/daya.jpg"
           alt=""
-          className="mb-4 inline-block h-56 w-full rounded-xl object-cover lg:h-56"
+          className=" inline-block h-56 w-full rounded-xl object-contain lg:h-56"
         />
-        <p className="mb-2 font-bold">John Brooklyn</p>
-        <p className="mb-2 text-sm text-[#636262]">Developer</p>
+        <p className="font-bold">Dayanand Kumar Mehta</p>
+        <p className=" text-sm text-[#636262]">CEO</p>
         <div className="mt-4 flex flex-wrap">
           <a
 
@@ -111,12 +111,12 @@ function Team() {
       {/* Item */}
       <div className="flex flex-col items-center justify-center gap-4 rounded-xl border border-solid border-[#636262] p-4 [box-shadow:rgb(0,_0,_0)_6px_6px] duration-300 hover:shadow-none">
         <img
-          src="https://assets.website-files.com/63904f663019b0d8edf8d57c/63980b390754711c1de95455_Rectangle%2040024-2.jpg"
+          src="/anand.jpg"
           alt=""
-          className="mb-4 inline-block h-56 w-full rounded-xl object-cover lg:h-56"
+          className=" inline-block h-56 w-full rounded-xl object-cover lg:h-56"
         />
-        <p className="mb-2 font-bold">John Brooklyn</p>
-        <p className="mb-2 text-sm text-[#636262]">Developer</p>
+        <p className=" font-bold">ANAND JI</p>
+        <p className=" text-sm text-[#636262]">CMO</p>
         <div className="mt-4 flex flex-wrap">
           <a
 
