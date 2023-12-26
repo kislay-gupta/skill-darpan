@@ -408,36 +408,7 @@ function MegaMenu() {
                 </div>
               </div>
             </li>
-            <li class="px-1 py-2 relative group">
-              <a
-                href="#"
-                class="duration-250  relative flex cursor-pointer
-                px-2
-                py-2
-                transition-all
-                before:absolute
-                before:-bottom-0.5
-                before:left-1/2
-                before:h-1
-                before:w-0
-                before:-translate-x-1/2
-                before:rounded-full
-                before:bg-gradient-to-r
-                before:from-blue-600
-                before:via-blue-400
-                before:to-blue-500
-                before:opacity-0
-                before:transition-all
-                before:duration-500
-                before:content-['']
-                hover:text-primary
-                hover:before:w-3/4
-                hover:before:opacity-100 "
-                aria-haspopup="true"
-              >
-                Courses
-              </a>
-            </li>
+
             <li class="px-1 py-2 relative group">
               <a
                 href="#"
